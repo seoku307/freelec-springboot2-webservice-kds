@@ -1,0 +1,37 @@
+buildscript{
+    ext{//ext:전역변수설정하겠다는의미
+        springBootVersion = '2.1.7.RELEASE'
+    }
+
+    repositories{
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies{
+        // spring-boot-gradle-plugin 라는 스프링부트 그레이들 플러그인의2.1.7.RELEASE 를 의존성으로 받겠다는 의미
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+
+}
+
+// 자바와스프링부트를사용하기위해서필수인플러그인
+apply plugin:'java'
+apply plugin:'eclipse'
+apply plugin:'org.springframework.boot'
+apply plugin:'io.spring.dependency-management' // 스프링부트의의존성들을관리해주는플러그인
+
+group 'com.kds.book'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories{ // repositories:각종의존성(라이브러리)들을어떤원격저장소에서받을지저장
+    mavenCentral() //mavenCentral:이전부터많이사용,본인이만든라이브러리업로드하기힘듦
+    jcenter() // center:최근에나옴,간단한업로드, jcenter 업로드(mavenCentral 에자동업로드)
+}
+
+dependencies{ // dependencies:프로젝트 개발에 필요한 의존성선언 test
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+}
