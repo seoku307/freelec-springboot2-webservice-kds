@@ -30,6 +30,8 @@ repositories{ // repositories:각종의존성(라이브러리)들을어떤원격
 dependencies{ // dependencies:프로젝트 개발에 필요한 의존성선언 test
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.projectlombok:lombok')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('com.h2database:h2')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
 }
