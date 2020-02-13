@@ -2,17 +2,14 @@ buildscript{
     ext{ // ext:전역변수설정하겠다는의미
         springBootVersion = '2.1.7.RELEASE'
     }
-
     repositories{
         mavenCentral()
         jcenter()
     }
-
     dependencies{
         // spring-boot-gradle-plugin 라는 스프링부트 그레이들 플러그인의2.1.7.RELEASE 를 의존성으로 받겠다는 의미
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
-
 }
 
 // 자바와스프링부트를사용하기위해서필수인플러그인
@@ -32,6 +29,7 @@ repositories{ // repositories:각종의존성(라이브러리)들을어떤원격
 
 dependencies{ // dependencies:프로젝트 개발에 필요한 의존성선언 test
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.projectlombok:lombok')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
 }
